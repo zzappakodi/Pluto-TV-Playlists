@@ -5,11 +5,11 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:
 
-# CORRECCIÓN 1: Permisos de escritura para evitar el error 403
+# CORRECCIÓN: Añadido permiso específico para workflows
 permissions:
   contents: write
+  workflows: write
 
-# CORRECCIÓN 2: Variable de entorno para eliminar el aviso de Node.js 20
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18 # Nota: Tu script usa Node 18, pero las Actions internas requerían actualizarse.
+          node-version: 18
 
       - name: Install dependencies
         run: npm install
