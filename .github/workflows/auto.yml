@@ -5,10 +5,10 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:
 
-# CORRECCIÓN: Añadido permiso específico para workflows
+# CORRECCIÓN SINTÁCTICA: 'actions: write' es el comando correcto
 permissions:
   contents: write
-  workflows: write
+  actions: write
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
